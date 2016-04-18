@@ -13,5 +13,8 @@ RUN apt-get update
 # apt-get install php
 RUN apt-get install -y php5 php5-mysql php5-xdebug php5-json php5-memcache php5-cgi php5-xsl php5-cli php5-fpm php5-imagick php5-readline php5-sqlite php5-common php5-gd php5-curl php5-redis
 
+# test PHP version
+RUN php -r "if(version_compare(PHP_VERSION, '5.6.0', '<') || version_compare(PHP_VERSION, '5.7.0', '>=')){ echo 'Invalid PHP version '.PHP_VERSION; exit(1); }"
+
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
