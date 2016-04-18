@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 # apt-get dependencies
 RUN apt-get update
-RUN apt-get install -y git wget curl zip rar
+RUN apt-get install -y git wget curl zip
 
 # apt-get set sources for PHP (wheezy = php5.4)
 RUN echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
