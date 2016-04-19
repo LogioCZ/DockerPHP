@@ -13,6 +13,9 @@ RUN apt-get update
 # apt-get install php
 RUN apt-get install -y php7.0 php7.0-mysql php7.0-xdebug php7.0-json php7.0-cgi php7.0-xsl php7.0-cli php7.0-fpm php7.0-imagick php7.0-readline php7.0-sqlite php7.0-common php7.0-gd php7.0-curl php7.0-redis
 
+# disabled xdebug
+RUN sed -i "s/^/;/g" /etc/php5/cli/conf.d/20-xdebug.ini
+
 # test PHP version
 RUN php -r "if(version_compare(PHP_VERSION, '7.0.0', '<') || version_compare(PHP_VERSION, '7.1.0', '>=')){ echo 'Invalid PHP version '.PHP_VERSION; exit(1); }"
 
