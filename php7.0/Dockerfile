@@ -13,6 +13,9 @@ RUN apt-get update
 # apt-get install php
 RUN apt-get install -y php7.0 php7.0-mysql php7.0-xdebug php7.0-json php7.0-cgi php7.0-xsl php7.0-cli php7.0-fpm php7.0-imagick php7.0-readline php7.0-sqlite php7.0-common php7.0-gd php7.0-curl php7.0-redis
 
+# apt-get install python
+RUN apt-get install -y python
+
 # disabled xdebug
 RUN sed -i "s/^/;/g" /etc/php/7.0/cli/conf.d/20-xdebug.ini
 
