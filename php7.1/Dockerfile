@@ -27,3 +27,6 @@ RUN php -r "if(strpos(PHP_VERSION, '7.1.') !== 0){ echo 'Invalid PHP version '.P
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Mono + nUnit
+RUN apt-get install -y mono-complete mono-devel monodevelop-nunit
