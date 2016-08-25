@@ -8,6 +8,8 @@ RUN apt-get install -y git wget curl zip
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" >> /etc/apt/sources.list
 RUN echo "deb-src http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+
+# Actualize source list
 RUN apt-get update
 
 # apt-get install php
@@ -30,3 +32,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install Mono + nUnit
 RUN apt-get install -y mono-complete mono-devel monodevelop-nunit
+
+# test Mono version
+RUN (mono -V | grep "version 4.") || (echo "Missing mono version 4" && mono -V && exit 1)

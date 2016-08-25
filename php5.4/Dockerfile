@@ -8,6 +8,12 @@ RUN apt-get install -y git wget curl zip
 RUN echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 RUN echo "deb-src http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 RUN wget https://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg
+
+# apt-get set seource for MONO
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/apt/sources.list.d/mono-xamarin.list
+
+# Actualize source list
 RUN apt-get update
 
 # apt-get install php
@@ -27,3 +33,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install Mono + nUnit
 RUN apt-get install -y mono-complete mono-devel monodevelop-nunit
+
+# test Mono version
+RUN (mono -V | grep "version 4.") || (echo "Missing mono version 4" && mono -V && exit 1)
