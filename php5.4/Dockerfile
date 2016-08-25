@@ -32,7 +32,7 @@ RUN php -r "if(version_compare(PHP_VERSION, '5.4.0', '<') || version_compare(PHP
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Mono + nUnit
-RUN apt-get install -y mono-complete mono-devel monodevelop-nunit
+RUN apt-get install -y mono-complete mono-devel monodevelop-nunit mono-reference-assemblies-*
 
 # test Mono version
 RUN (mono -V | grep "version 4.") || (echo "Missing mono version 4" && mono -V && exit 1)
