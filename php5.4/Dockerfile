@@ -17,7 +17,10 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /e
 RUN apt-get update
 
 # apt-get install php
-RUN apt-get install -y php5 php5-mysql php5-xdebug php5-json php5-cgi php5-xsl php5-cli php5-fpm php5-imagick php5-readline php5-sqlite php5-common php5-gd php5-curl php5-redis
+RUN apt-get install -y php5 php5-mysql php5-xdebug php5-json php5-cgi php5-xsl php5-cli php5-fpm php5-imagick php5-readline php5-sqlite php5-common php5-gd php5-curl php5-redis php5-zip
+
+RUN apt-get install -y mariadb-client
+RUN apt-get install -y apache2 libapache2-mod-php5
 
 # apt-get install python
 RUN apt-get install -y python

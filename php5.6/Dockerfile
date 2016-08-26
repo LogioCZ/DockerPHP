@@ -13,7 +13,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14AA40EC0831756756D
 RUN apt-get update
 
 # apt-get install php
-RUN apt-get install -y php5.6 php5.6-mysql php5.6-xdebug php5.6-json php5.6-cgi php5.6-xsl php5.6-cli php5.6-fpm php5.6-imagick php5.6-readline php5.6-sqlite php5.6-common php5.6-gd php5.6-curl php5.6-redis
+RUN apt-get install -y php5.6 php5.6-mysql php5.6-xdebug php5.6-json php5.6-cgi php5.6-xsl php5.6-cli php5.6-fpm php5.6-imagick php5.6-readline php5.6-sqlite php5.6-common php5.6-gd php5.6-curl php5.6-redis php5.6-zip
+
+RUN apt-get install -y mariadb-client
+RUN apt-get install -y apache2 libapache2-mod-php5.6
 
 # apt-get install python
 RUN apt-get install -y python
