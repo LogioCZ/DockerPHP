@@ -15,6 +15,9 @@ RUN apt-get update
 # apt-get install php
 RUN apt-get install -y php7.0 php7.0-mysql php7.0-xdebug php7.0-json php7.0-cgi php7.0-xsl php7.0-cli php7.0-fpm php7.0-imagick php7.0-readline php7.0-sqlite php7.0-common php7.0-gd php7.0-curl php7.0-redis php7.0-zip
 
+RUN apt-get install -y mariadb-client
+RUN apt-get install -y apache2 libapache2-mod-php7.0
+
 # apt-get install python
 RUN apt-get install -y python
 
