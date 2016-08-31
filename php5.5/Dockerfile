@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 # apt-get dependencies
 RUN apt-get update
-RUN apt-get install -y git wget curl zip
+RUN apt-get install -y git wget curl zip openssh-client
 
 # apt-get set sources for PHP 5.5
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" >> /etc/apt/sources.list
@@ -11,6 +11,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14AA40EC0831756756D
 
 # Actualize source list
 RUN apt-get update
+
+# Install mysql client
+RUN apt-get install -y mysql-client
 
 # apt-get install php
 RUN apt-get install -y php5.5 php5.5-mysql php5.5-xdebug php5.5-json php5.5-cgi php5.5-xsl php5.5-cli php5.5-fpm php5.5-imagick php5.5-readline php5.5-sqlite php5.5-common php5.5-gd php5.5-curl php5.5-redis php5.5-zip

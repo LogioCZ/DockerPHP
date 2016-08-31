@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 # apt-get dependencies
 RUN apt-get update
-RUN apt-get install -y git wget curl zip
+RUN apt-get install -y git wget curl zip openssh-client
 
 # apt-get set sources for PHP 7.0
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" >> /etc/apt/sources.list
@@ -11,6 +11,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14AA40EC0831756756D
 
 # Actualize source list
 RUN apt-get update
+
+# Install mysql client
+RUN apt-get install -y mysql-client
 
 # apt-get install php
 RUN apt-get install -y php7.0 php7.0-mysql php7.0-xdebug php7.0-json php7.0-cgi php7.0-xsl php7.0-cli php7.0-fpm php7.0-imagick php7.0-readline php7.0-sqlite php7.0-common php7.0-gd php7.0-curl php7.0-redis php7.0-zip

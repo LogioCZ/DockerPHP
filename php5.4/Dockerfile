@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 # apt-get dependencies
 RUN apt-get update
-RUN apt-get install -y git wget curl zip
+RUN apt-get install -y git wget curl zip openssh-client
 
 # apt-get set sources for PHP (wheezy = php5.4)
 RUN echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
@@ -15,6 +15,9 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /e
 
 # Actualize source list
 RUN apt-get update
+
+# Install mysql client
+RUN apt-get install -y mysql-client
 
 # apt-get install php
 RUN apt-get install -y php5 php5-mysql php5-xdebug php5-json php5-cgi php5-xsl php5-cli php5-fpm php5-imagick php5-readline php5-sqlite php5-common php5-gd php5-curl php5-redis php5-zip
