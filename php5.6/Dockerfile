@@ -11,6 +11,7 @@ RUN apt-get update \
       apache2 \
       curl \
       git \
+      make \
       mariadb-client \
       mono-complete \
       mono-devel \

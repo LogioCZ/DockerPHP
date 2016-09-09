@@ -16,13 +16,14 @@ RUN apt-get update \
       apache2 \
       curl \
       git \
-      mysql-client \
+      make \
       mono-complete \
       mono-devel \
       mono-reference-assemblies-* \
       mono-runtime \
       mono-xbuild \
       monodevelop-nunit \
+      mysql-client \
       openssh-client \
       python \
       zip
