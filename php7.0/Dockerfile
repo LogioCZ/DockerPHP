@@ -19,6 +19,7 @@ RUN apt-get update \
       mono-runtime \
       mono-xbuild \
       monodevelop-nunit \
+      nuget \
       openssh-client \
       python \
       wget \
