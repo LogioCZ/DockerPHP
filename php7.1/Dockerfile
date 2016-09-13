@@ -17,7 +17,7 @@ RUN apt-get update \
       mariadb-client \
       mono-complete \
       mono-devel \
-      mono-reference-assemblies-* \
+      mono-mcs \
       mono-runtime \
       mono-xbuild \
       monodevelop-nunit \
