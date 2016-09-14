@@ -25,6 +25,7 @@ RUN apt-get update \
       monodevelop-nunit \
       mysql-client \
       nuget \
+      nunit \
       openssh-client \
       python \
       zip
